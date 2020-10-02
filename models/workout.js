@@ -60,6 +60,6 @@ workoutSchema.virtual('totalDuration').get( function() {
     return this.exercises.reduce((total, exercise) => total + exercise.duration, 0)
 })
 
-const Workout = mmongoose.model("Workout", workoutSchema);
+const Workout = mongoose.model("Workout", workoutSchema);
 
 module.exports = Workout;
