@@ -10,7 +10,7 @@ const workoutSchema = new Schema({
         {
             workoutType: {
                 type: String,
-                enum: ["anaerobic", "cardio"],
+                enum: ["resistance", "cardio"],
                 required: true
             },
             workoutName: {
@@ -24,13 +24,13 @@ const workoutSchema = new Schema({
             weight: {
                 type: Number,
                 required: function () {
-                    return this.type = "anaerobic";
+                    return this.type = "resistance";
                 }
             },
             reps: {
                 type: Number,
                 required: function () {
-                    return this.type = "anaerobic";
+                    return this.type = "resistance";
                 },
                 min: [2, "Must have at least two reps"],
                 max: [600, "C'mon bro - Don't try and be a hero"]
@@ -38,7 +38,7 @@ const workoutSchema = new Schema({
             sets: {
                 type: Number,
                 required: function () {
-                    return this.type = "anaerobic";
+                    return this.type = "resistance";
                 },
                 min: [1, "Must have at least 1 set"]
             },
